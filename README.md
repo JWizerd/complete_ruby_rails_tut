@@ -1,1 +1,1 @@
-# complete_ruby_rails_tut
+# Complete Ruby on Rails Tutorial by Mashrur Hossain - Exercises and Projects
