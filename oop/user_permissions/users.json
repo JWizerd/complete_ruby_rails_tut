@@ -1,0 +1,2 @@
+{:email=>"jwodke@outlook.com", :name=>"jeremiah", :permissions=>"{\"accounts\":\"read\",\"policies\":\"write\",\"users\":\"write\"}"}
+{:email=>"johndoes@outlook.com", :name=>"john", :permissions=>"{\"accounts\":\"read\",\"policies\":\"write\",\"users\":\"write\"}"}
