@@ -3,3 +3,7 @@
 <p>Title: <%= @article.title %></p>
 
 <p>Description: <%= @article.description %></p>
+
+<strong><%= link_to 'Edit', edit_article_path(@article) %></strong>
+
+<strong><%= link_to "Back to all articles", articles_path %></strong>
