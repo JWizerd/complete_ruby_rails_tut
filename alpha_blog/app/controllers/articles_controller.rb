@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+
   def index 
     @articles = Article.all
   end
@@ -7,12 +9,11 @@ class ArticlesController < ApplicationController
     @article = Article.new #creates new article from articles/new view
   end
 
-  def edit
-    @article = Article.find(params[:id]) #find the id of a created article
+  def edit #find the id of a created article
+
   end
 
   def update #notes from here are valid for create method as well.
-    @article = Article.find(params[:id]) 
     if @article.update(article_params) # if article params (line 40) are true run code
       flash[:notice] = "Article was successfully edited" #this is a rails method that shows an notification if errors are present in submission
       redirect_to article_path(@article) # after 
@@ -32,19 +33,25 @@ class ArticlesController < ApplicationController
   end
 
   def show 
-    @article = Article.find(params[:id])
+
   end
 
   def destroy
-    @article = Article.find(params[:id])
+
     flash[:notice] = "Article successfully removed"
     @article.destroy
     redirect_to articles_path
   end
 
   private
-  def article_params
-    params.require(:article).permit(:title, :description)
-  end
+
+    def article_params
+      params.require(:article).permit(:title, :description)
+    end
+
+    def set_article
+      @article = Article.find(params[:id])
+    end
+
 
 end
